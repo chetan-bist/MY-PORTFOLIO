@@ -8,15 +8,15 @@ export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const contactMethods = [
-    { icon: Mail, label: "Email", value: "hello@example.com", link: "mailto:hello@example.com" },
-    { icon: Phone, label: "Phone", value: "+977 123456789", link: "tel:+977123456789" },
+    { icon: Mail, label: "Email", value: "bistc3712@gmail.com", link: "#" },
+    { icon: Phone, label: "Phone", value: "+977 9847537376", link: "#" },
     { icon: MapPin, label: "Location", value: "Kathmandu, Nepal", link: "#" },
   ]
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", link: "#" },
-    { icon: Linkedin, label: "LinkedIn", link: "#" },
-    { icon: Twitter, label: "Twitter", link: "#" },
+    { icon: Github, label: "GitHub", link: "https://github.com/chetan-bist" },
+    { icon: Linkedin, label: "LinkedIn", link: "https://www.linkedin.com/in/chetan-bist-4a257329a/" },
+    { icon: Twitter, label: "Twitter", link: "https://x.com/CHETANBIST43245" },
   ]
 
   return (

@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight, Download } from "lucide-react"
+import { motion } from "framer-motion";
+import { ArrowRight, Download } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -9,9 +10,20 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mb-6">
-              <span className="text-cyan-400 text-sm font-semibold">Welcome to my portfolio</span>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-6"
+            >
+              <span className="text-cyan-400 text-sm font-semibold">
+                Welcome to my portfolio
+              </span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -21,25 +33,32 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-gray-400 mb-8 max-w-xl leading-relaxed">
-              I build modern, fast, and secure web applications. Specialized in React, Next.js, Laravel, and creating
-              pixel-perfect user interfaces.
+              I build modern, fast, and secure web applications. Specialized in
+              React, Next.js, Java, and creating pixel-perfect user
+              interfaces.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)",
+                }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
               >
                 Get In Touch <ArrowRight size={18} />
               </motion.button>
-              <motion.button
+              <motion.a
+                href="/Chetan_Bist_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
               >
                 Download CV <Download size={18} />
-              </motion.button>
+              </motion.a>
             </div>
 
             {/* Stats */}
@@ -55,7 +74,9 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.1 }}
                 >
-                  <div className="text-2xl font-bold text-cyan-400">{stat.number}</div>
+                  <div className="text-2xl font-bold text-cyan-400">
+                    {stat.number}
+                  </div>
                   <div className="text-sm text-gray-500">{stat.label}</div>
                 </motion.div>
               ))}
@@ -76,7 +97,11 @@ export default function Hero() {
               transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
               className="relative z-10 w-2/3 h-5/6 rounded-2xl overflow-hidden border-2 border-cyan-500/50 shadow-lg shadow-cyan-500/20"
             >
-              <img src="/chetan.png" alt="Portfolio Profile" className="w-full h-full object-cover" />
+              <img
+                src="/chetan.png"
+                alt="Portfolio Profile"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
 
             {/* Animated background glow */}
@@ -95,5 +120,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -13,7 +13,7 @@ export default function Skills() {
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express", "Laravel", "PHP", "MySQL", "PostgreSQL"],
+      skills: ["Node.js", "Express", "Java", "PHP", "MySQL", "PostgreSQL"],
     },
     {
       title: "Tools & Others",

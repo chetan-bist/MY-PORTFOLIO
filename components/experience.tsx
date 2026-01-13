@@ -1,34 +1,20 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Experience() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const experiences = [
     {
-      title: "Senior Full-Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2023 - Present",
+      title: "Full-Stack Developer Intern",
+      company: "NepseTrading.com",
+      period: "2025 — Internship (3 Months)",
       description:
-        "Lead development of scalable web applications. Mentor junior developers and optimize system performance.",
+        "Contributed to the development of a live stock trading platform. Worked on frontend UI development, backend logic, API integration, and database management while gaining hands-on experience with real production-level code.",
     },
-    {
-      title: "Full-Stack Developer",
-      company: "Creative Digital Agency",
-      period: "2021 - 2023",
-      description:
-        "Built responsive web applications for 20+ clients. Improved page load times by 40% through optimization.",
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartUp Hub",
-      period: "2020 - 2021",
-      description:
-        "Developed user interfaces for SaaS applications. Collaborated with designers to implement pixel-perfect designs.",
-    },
-  ]
+  ];
 
   return (
     <section id="experience" ref={ref} className="py-20 px-4 sm:px-6 lg:px-8">
@@ -56,7 +42,9 @@ export default function Experience() {
                 initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                className={`flex gap-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                className={`flex gap-8 ${
+                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
                 {/* Timeline dot */}
                 <div className="flex flex-col items-center">
@@ -71,8 +59,12 @@ export default function Experience() {
                   whileHover={{ y: -5 }}
                   className="flex-1 p-6 border border-border rounded-2xl bg-card/50 backdrop-blur-sm hover:border-cyan-500/30 transition-all"
                 >
-                  <h3 className="text-2xl font-bold text-cyan-400 mb-1">{exp.title}</h3>
-                  <p className="text-gray-400 font-semibold mb-2">{exp.company}</p>
+                  <h3 className="text-2xl font-bold text-cyan-400 mb-1">
+                    {exp.title}
+                  </h3>
+                  <p className="text-gray-400 font-semibold mb-2">
+                    {exp.company}
+                  </p>
                   <p className="text-sm text-gray-500 mb-4">{exp.period}</p>
                   <p className="text-gray-300">{exp.description}</p>
                 </motion.div>
@@ -82,5 +74,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

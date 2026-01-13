@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-              Mero Portfolio
+              Chetan Bist
             </div>
             <p className="text-gray-500 text-sm">Building beautiful & functional web experiences.</p>
           </motion.div>
