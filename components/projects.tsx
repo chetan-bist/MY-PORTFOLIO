@@ -1,38 +1,51 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { ExternalLink, Github } from "lucide-react"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const projects = [
     {
-      title: "Trading dashboard",
-      description: "Trading dashboard clone built with Next.js and Tailwind, focused on charts, analytics, and clean UI.",
-      tech: [ "Node.js", "Tailwind css"],
-      image: "/project/trading-dashboard.png",
-      link: "https://trading-dashboard-vert.vercel.app/",
-      github: "https://github.com/chetan-bist/Trading-dashboard",
+      title: "KDS Bakery UI",
+      description:
+        "Modern bakery website UI with product listings, categories, and a clean responsive design",
+      tech: ["Next.js", "Tailwind CSS", "TypeScript"],
+      image: "/project/kds-bakery-ui.png",
+      link: "https://kds-bakery-ui.vercel.app/",
+      github: "https://github.com/chetan-bist/kds-bakery-ui",
     },
     {
       title: "Hotel Management App",
-      description: "Hotel booking UI clone with room listings, filters, and a clean user interface",
-      tech: ["Next.js","Tailwind CSS", "TypeScript"],
+      description:
+        "Hotel booking UI clone with room listings, filters, and a clean user interface",
+      tech: ["Next.js", "Tailwind CSS", "TypeScript"],
       image: "/project/Hotel-system.png",
       link: " https://v0-hotel-website-design-omega.vercel.app",
       github: "https://github.com/chetan-bist/Hotel-Website-UI",
     },
     {
       title: "ThirtySix Studio",
-      description: "A clone of ThirtySix Studio’s site — elegant, motion-driven layout with creative-tech feel, combining design, animation, and interactive storytelling.",
+      description:
+        "A clone of ThirtySix Studio’s site — elegant, motion-driven layout with creative-tech feel, combining design, animation, and interactive storytelling.",
       tech: ["React", "tailwind css", "javascript"],
       image: "/project/ThirtysixStudio.png",
       link: "https://thirtysix-studio-zmfa.vercel.app/",
       github: "https://github.com/chetan-bist/ThirtysixStudio",
     },
-  ]
+     {
+      title: "Trading dashboard",
+      description:
+        "Trading dashboard clone built with Next.js and Tailwind, focused on charts, analytics, and clean UI.",
+      tech: ["Node.js", "Tailwind css"],
+      image: "/project/trading-dashboard.png",
+      link: "https://trading-dashboard-vert.vercel.app/",
+      github: "https://github.com/chetan-bist/Trading-dashboard",
+    },
+    
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,15 +53,19 @@ export default function Projects() {
       opacity: 1,
       transition: { staggerChildren: 0.2 },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
-    <section id="projects" ref={ref} className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/5">
+    <section
+      id="projects"
+      ref={ref}
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/5"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -101,7 +118,9 @@ export default function Projects() {
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                <p className="text-gray-400 text-sm mb-4">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, j) => (
                     <span
@@ -118,5 +137,5 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
