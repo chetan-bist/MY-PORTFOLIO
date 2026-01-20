@@ -18,6 +18,16 @@ export default function Projects() {
       github: "https://github.com/chetan-bist/kds-bakery-ui",
     },
     {
+      title: "MarketFinder",
+      description:
+        "Location-based local market platform that lets users find products across city markets, check shop availability, and navigate directly to the shop using maps.",
+      tech: ["Next.js", "Tailwind CSS", "Map API"],
+      image: "/project/marketfinder.png",
+      link: "https://marketfinder.vercel.app/",
+      github: "https://github.com/chetan-bist/marketfinder",
+    },
+
+    {
       title: "Hotel Management App",
       description:
         "Hotel booking UI clone with room listings, filters, and a clean user interface",
@@ -35,7 +45,7 @@ export default function Projects() {
       link: "https://thirtysix-studio-zmfa.vercel.app/",
       github: "https://github.com/chetan-bist/ThirtysixStudio",
     },
-     {
+    {
       title: "Trading dashboard",
       description:
         "Trading dashboard clone built with Next.js and Tailwind, focused on charts, analytics, and clean UI.",
@@ -44,7 +54,6 @@ export default function Projects() {
       link: "https://trading-dashboard-vert.vercel.app/",
       github: "https://github.com/chetan-bist/Trading-dashboard",
     },
-    
   ];
 
   const containerVariants = {
